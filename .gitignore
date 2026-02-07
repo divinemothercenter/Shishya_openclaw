@@ -1,0 +1,63 @@
+# Sensitive files
+*.key
+*.pem
+*.env
+.env*
+*secret*
+*token*
+*credential*
+openclaw.json
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.pyc
+__pycache__/
+node_modules/
+dist/
+build/
+
+# Large files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.zip
+*.tar.gz
+*.dmg
+*.iso
+
+# Image generation output
+/tmp/
+
+# Session transcripts (optional - may contain sensitive data)
+# Uncomment if you don't want to version control these:
+# *.jsonl
+
+# OS-specific
+.AppleDouble
+.LSOverride
+._*
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor artifacts
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+logs/
+
+# Git itself
+.git/
