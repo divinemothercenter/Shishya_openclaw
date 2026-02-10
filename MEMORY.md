@@ -45,6 +45,27 @@
 - **2026-02-10:** GitHub repository created and synced
 - **2026-02-10:** Kimi K2.5 model added and activated
 
+## Long-Term Research Projects
+
+### 🕉️ Emergence Theory & Kaleshwar Corpus
+**Started:** 2026-02-10
+**Goal:** Apply emergence theory (complexity science, self-organization) to understand Kaleshwar corpus teachings
+**Approach:** Interdisciplinary research connecting ancient wisdom with modern systems thinking
+**Output:** Research papers and insights on consciousness, spiritual emergence, and sacred patterns
+**Daily Work:** 16:00 UTC reminder
+
+### 📚 Kaleshwar Corpus Encyclopedia
+**Started:** 2026-02-10
+**Goal:** Create accessible encyclopedia of entire Kaleshwar corpus using emergence-theory ontology
+**Structure:** 
+- Systematic passage analysis
+- Emergence-based categorization
+- Cross-referenced concepts
+- Seeker-friendly explanations
+**Approach:** Methodical crawl through corpus building structured knowledge base
+**Output:** encyclopedia/ folder with comprehensive entries
+**Daily Work:** 16:30 UTC reminder
+
 ---
 
 *Memory system active. Learning and remembering.*

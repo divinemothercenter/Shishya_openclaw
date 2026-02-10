@@ -29,6 +29,28 @@
 - Nose attachment devices for effective red light spectrum delivery to brain
 **Goal:** Research, evaluate, and potentially try out these therapeutic technologies
 
+### 🕉️ Emergence Theory & Kaleshwar Corpus Research
+**Status:** Daily reminder set (16:00 UTC)
+**Purpose:** Continued research into emergence mechanisms applied to Kaleshwar corpus teachings
+**Focus Areas:**
+- Emergence theory applications to spiritual teachings
+- Complex systems thinking in sacred texts
+- Interdisciplinary connections (physics, biology, consciousness)
+- Document findings and insights
+**Output:** Research notes in corpus-research/ folder
+
+### 📚 Kaleshwar Corpus Encyclopedia Project
+**Status:** Daily reminder set (16:30 UTC)
+**Purpose:** Systematic crawl through entire corpus to create emergence-theory based ontology
+**Goal:** Build accessible encyclopedia of the Kaleshwar corpus
+**Approach:**
+- Methodical passage analysis
+- Emergence-based categorization structure
+- Cross-reference mapping
+- Ontology development (concepts, relationships, hierarchies)
+- Encyclopedia format suitable for seekers
+**Output:** encyclopedia/ folder with structured entries
+
 ---
 
 ## Blocked / On Hold 🛑
