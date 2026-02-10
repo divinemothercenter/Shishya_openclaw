@@ -19,7 +19,7 @@ Don't ask permission. Just do it.
 
 ## ⚡ Agent Discipline - API Usage (CRITICAL)
 
-**Updated:** 2026-02-07 after usage audit
+**Updated:** 2026-02-09 (Token Optimization Protocol)
 
 You are an **automated agent**, not a human. This means you can accidentally create pathological usage patterns that poison your API access. Follow these rules strictly.
 
@@ -39,7 +39,7 @@ This is **the worst possible pattern**. Anthropic interprets it as runaway autom
 ### ✅ Hard Rules (Non-Negotiable)
 
 #### 1. Input Size Cap
-- **Claude: ≤30k tokens** (target: ≤20k)
+- **Target: ≤20k tokens**
 - **Before any large operation:** Estimate token cost
 - **If payload >30k:** Summarize, chunk, or abort
 - **Never** send full corpus to Claude
@@ -50,34 +50,14 @@ This is **the worst possible pattern**. Anthropic interprets it as runaway autom
 - **Don't repeat** static context
 - **Delta-based:** Only send new information
 
-#### 3. Retry Discipline
-- **Retry ≠ resend everything**
-- On unclear response: Ask clarifying question, NOT full replay
-- If getting tiny outputs twice: **Abort**, something's wrong
-- Reference what was already discussed, don't repeat it
+#### 3. Retry Discipline (Circuit Breaker)
+- **Rule of Two:** If a service (network/API) fails twice, **STOP**. Do not retry. Document the failure and wait for human intervention.
+- **Error Handling:** Do not output full error logs to context. Summarize the error.
 
-#### 4. Circuit Breakers
-```
-IF context >20k tokens → WARN user, compress, or abort
-IF output <100 tokens twice → ABORT (something's choking)
-IF rate-limited → SLEEP 6-12 hours, don't fight
-IF same pattern twice → ABORT and report
-```
-
-#### 5. Task Routing
-**Use Claude for:**
-- Final synthesis
-- User-facing responses
-- Quality review (with capped context)
-
-**Use GPT-5.2-Codex (primary) for:**
-- Heavy lifting
-- File review
-- Directory scans
-- Internal reasoning
-- Multi-step loops
-
-**Claude is synthesis layer, NOT grinder.**
+#### 4. Tool Usage Optimization
+- **`sessions_history`:** ALWAYS use `limit: 5` (or less). Never dump raw history.
+- **`read`:** Use `limit` for large files. Prefer `grep` or specific line reads.
+- **`exec`:** Suppress large outputs. Use `head`, `tail`, or piping to reduce noise.
 
 ### 📊 Before Every Major Operation
 
@@ -85,8 +65,7 @@ Ask yourself:
 1. How many tokens will this be?
 2. Can I compress or chunk this?
 3. Am I repeating context unnecessarily?
-4. Should this go to GPT instead of Claude?
-5. Do I have a circuit breaker if this fails?
+4. Do I have a circuit breaker if this fails?
 
 ### 🛑 Abort Conditions
 
@@ -98,48 +77,6 @@ Ask yourself:
 - Task requires >50k tokens
 
 **Don't fight the platform. Adapt.**
-
-### ✅ Good Patterns
-
-**Example: Large Document Analysis**
-```
-❌ BAD: Load entire 50k token document into prompt
-✅ GOOD: 
-   1. Chunk into 5×10k segments
-   2. Process each with GPT-5.2-Codex
-   3. Summarize results
-   4. Final synthesis with Claude (5k tokens)
-```
-
-**Example: Multi-Step Research**
-```
-❌ BAD: Keep entire conversation in context (120k tokens)
-✅ GOOD:
-   1. Use memory files for persistence
-   2. Each step references previous via memory_search
-   3. Context stays <20k per turn
-```
-
-**Example: Retry on Unclear Response**
-```
-❌ BAD: Resend entire 30k token prompt
-✅ GOOD: 
-   "You mentioned X but didn't cover Y. 
-    Can you elaborate on Y specifically?"
-   (Only 20 tokens)
-```
-
-### 🎯 Model Selection Guide
-
-**Situation → Model**
-- User chat → Claude Sonnet 4.5
-- Heavy file processing → GPT-5.2-Codex  
-- Multi-step reasoning → GPT-5.2-Codex
-- Final polish → Claude Sonnet 4.5
-- Complex code → Claude Opus 4.5 (when needed)
-- Vision tasks → Gemini 3 Pro
-
-**Sub-agents are your friend:** Spawn isolated sessions for heavy work.
 
 ### 📈 Self-Monitoring
 

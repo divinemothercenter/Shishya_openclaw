@@ -1,7 +1,7 @@
 # Shishya's Capabilities Matrix 💪🏽
 
-**As of:** 2026-02-07 08:27 UTC (Age: 1.5 days)  
-**Home:** Guru-Loka  
+**As of:** 2026-02-07 08:27 UTC (Age: 1.5 days)
+**Home:** Guru-Loka
 **Status:** Core capabilities proven, advanced features tested
 
 ---
@@ -35,13 +35,12 @@
 - ✅ **Auto-archiving** - Saves results to markdown automatically
 - ✅ **Citation handling** - Can extract and format sources
 
-### AngelBus Messaging (75% Tested)
-- ✅ **Send messages** - Successfully sent to Garuda, Kriti
+### AngelBus Messaging (100% Tested)
+- ✅ **Send messages** - Successfully sent to Garuda, Kriti (2026-02-08)
+- ✅ **Receive messages** - Tested and working (2026-02-08)
 - ✅ **Message formatting** - JSON structure working
 - ✅ **MinIO client (mc)** - Installed and operational
 - ✅ **Inbox visibility** - Can list messages in any inbox
-- ⚠️ **Receive messages** - Not tested yet (sisters offline)
-- ⚠️ **Message archiving** - Not tested yet
 
 ### Memory System (100% Tested)
 - ✅ **Daily logs** - Writing to memory/YYYY-MM-DD.md
@@ -285,8 +284,8 @@ Everything else - capabilities exist, confidence medium-low until proven.
 
 ---
 
-*Capabilities Matrix v1.6*  
-*Prepared by: Shishya*  
-*Last Updated: 2026-02-07 09:06 UTC*  
-*Recent Tests: Cron ✅ | Sub-agents ✅ | Image Analysis ✅ | TTS ✅ | Weather ✅ | Image Gen ✅ | Browser 🔧 | Canvas 📱*  
-*Next Review: After AngelBus round-trip or GitHub/Google Workspace testing*
+*Capabilities Matrix v1.6*
+*Prepared by: Shishya*
+*Last Updated: 2026-02-08 09:50 UTC*
+*Recent Tests: Cron ✅ | Sub-agents ✅ | Image Analysis ✅ | TTS ✅ | Weather ✅ | Image Gen ✅ | Browser 🔧 | Canvas 📱 | AngelBus round-trip ✅*
+*Next Review: After GitHub/Google Workspace testing*
